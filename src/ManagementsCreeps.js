@@ -1,6 +1,6 @@
 const minHarvesters = 2
 
-export const ManagementsCreeps = {
+const ManagementsCreeps = {
     run() {
         let harvesters = _.filter(
             Game.creeps,
@@ -48,7 +48,7 @@ export const ManagementsCreeps = {
         )
         if (
             haveMinCarvester &&
-            builder.length < 4 &&
+            builder.length < 6 &&
             Game.spawns['Spawn1'].spawnCreep(
                 [WORK, WORK, CARRY, CARRY, MOVE],
                 'builder' + Game.time,
@@ -58,10 +58,13 @@ export const ManagementsCreeps = {
             let newName = 'Builder' + Game.time
             console.log('Spawning new builder: ' + newName)
             Game.spawns['Spawn1'].spawnCreep(
-                [WORK, WORK, CARRY, CARRY, MOVE],
+                [WORK, WORK, CARRY, MOVE],
                 newName,
-                { memory: { role: 'builder' } }
+                {
+                    memory: { role: 'builder' },
+                }
             )
         }
     },
 }
+export default ManagementsCreeps

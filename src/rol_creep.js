@@ -1,3 +1,4 @@
-export default () => {
-    return 'ok'
+export const harvest = (creep) => {
+
+
 }

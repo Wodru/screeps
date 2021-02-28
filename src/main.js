@@ -1,34 +1,19 @@
 import roleUpgrader from 'rol_upgrader'
 import roleBuilder from 'rol_builder'
-import { ManagementsCreeps } from 'ManagementsCreeps'
+import ManagementsCreeps from 'ManagementsCreeps'
 import roleHarvester from 'rol_harvester'
 
-module.exports.loop = function () {
+export function loop() {
     ManagementsCreeps.run()
-    for (var name in Memory.creeps) {
+    for (let name in Memory.creeps) {
         if (!Game.creeps[name]) {
             delete Memory.creeps[name]
             console.log('Clearing non-existing creep memory:', name)
         }
     }
-    /*
-    var tower = Game.getObjectById('d2e803405f31de60c81af76b');
-    if(tower) {
-        var closestDamagedStructure = tower.pos.findClosestByRange(FIND_STRUCTURES, {
-            filter: (structure) => structure.hits < structure.hitsMax
-        });
-        if(closestDamagedStructure) {
-            tower.repair(closestDamagedStructure);
-        }
 
-        var closestHostile = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
-        if(closestHostile) {
-            tower.attack(closestHostile);
-        }
-    }
-*/
-    for (var name in Game.creeps) {
-        var creep = Game.creeps[name]
+    for (let name in Game.creeps) {
+        let creep = Game.creeps[name]
         if (creep.memory.role === 'harvester') {
             roleHarvester.run(creep)
         }

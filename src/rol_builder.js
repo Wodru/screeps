@@ -1,6 +1,8 @@
-var roleBuilder = {
+const roleBuilder = {
     /** @param {Creep} creep **/
-    run: function (creep) {
+    run: (creep) => {
+        var sources = creep.room.find(FIND_SOURCES)
+
         if (creep.memory.building && creep.store[RESOURCE_ENERGY] == 0) {
             creep.memory.building = false
             creep.say('🔄 harvest')
@@ -30,4 +32,4 @@ var roleBuilder = {
     },
 }
 
-module.exports = roleBuilder
+export default roleBuilder
