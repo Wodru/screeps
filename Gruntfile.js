@@ -7,7 +7,7 @@ module.exports = function (grunt) {
             options: {
                 email: config.email,
                 token: config.token,
-                branch: config.branch,
+                branch: process.env.BRANCH,
                 ptr: config.ptr,
             },
             buildToDeploy: {
