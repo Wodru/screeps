@@ -1,7 +1,7 @@
-import roleUpgrader from 'rol_upgrader'
-import roleBuilder from 'rol_builder'
-import ManagementsCreeps from 'ManagementsCreeps'
-import roleHarvester from 'rol_harvester'
+import roleUpgrader from './rol_upgrader'
+import roleBuilder from './rol_builder'
+import ManagementsCreeps from './ManagementsCreeps'
+import roleHarvester from './rol_harvester'
 
 export function loop() {
     ManagementsCreeps.run()

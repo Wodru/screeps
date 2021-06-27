@@ -11,13 +11,13 @@ const ManagementsCreeps = {
             Game.spawns['Spawn1'].spawnCreep(
                 [WORK, CARRY, MOVE],
                 'harvester' + Game.time,
-                { dryRun: true }
+                {dryRun: true}
             ) === 0
         ) {
             let newName = 'Harvester' + Game.time
             console.log('Spawning new harvester: ' + newName)
             Game.spawns['Spawn1'].spawnCreep([WORK, CARRY, MOVE], newName, {
-                memory: { role: 'harvester' },
+                memory: {role: 'harvester'},
             })
         }
         let haveMinCarvester = harvesters.length >= minHarvesters
@@ -32,13 +32,13 @@ const ManagementsCreeps = {
             Game.spawns['Spawn1'].spawnCreep(
                 [WORK, CARRY, MOVE],
                 'upgrader' + Game.time,
-                { dryRun: true }
+                {dryRun: true}
             ) === 0
         ) {
             let newName = 'Upgrader' + Game.time
             console.log('Spawning new upgrader: ' + newName)
             Game.spawns['Spawn1'].spawnCreep([WORK, CARRY, MOVE], newName, {
-                memory: { role: 'upgrader' },
+                memory: {role: 'upgrader'},
             })
         }
 
@@ -52,7 +52,7 @@ const ManagementsCreeps = {
             Game.spawns['Spawn1'].spawnCreep(
                 [WORK, WORK, CARRY, CARRY, MOVE],
                 'builder' + Game.time,
-                { dryRun: true }
+                {dryRun: true}
             ) === 0
         ) {
             let newName = 'Builder' + Game.time
@@ -61,7 +61,7 @@ const ManagementsCreeps = {
                 [WORK, WORK, CARRY, MOVE],
                 newName,
                 {
-                    memory: { role: 'builder' },
+                    memory: {role: 'builder'},
                 }
             )
         }
