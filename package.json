@@ -32,5 +32,8 @@
         "watch-run": "^1.2.5",
         "webpack": "^4.17.1",
         "webpack-cli": "^4.7.2"
+    },
+    "dependencies": {
+        "glob-parent": "^5.1.2"
     }
 }
